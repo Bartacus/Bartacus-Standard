@@ -1,0 +1,11 @@
+# Environments configuration. Choose from Production, Production/Staging and Development
+<IfModule mod_setenvif.c>
+	SetEnvIf Host "example\.com$" TYPO3_CONTEXT=Production
+	SetEnvIf Host "example\.staging$" TYPO3_CONTEXT=Production/Staging
+	SetEnvIf Host "example\.dev" TYPO3_CONTEXT=Development
+</IfModule>
+
+# Set composer autoloading
+SetEnv TYPO3_COMPOSER_AUTOLOAD true
+
+# Copy other directives from typo3_src/_.htaccess file if needed!
