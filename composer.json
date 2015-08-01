@@ -1,43 +1,43 @@
 {
-	"name": "bartacus/bartacus-standard",
-	"type": "project",
-	"description": "The standard edition of the Bartacus project",
-	"license": "GPL-3.0+",
-	"authors": [
-		{
-			"name": "Patrik Karisch",
-			"email": "p.karisch@pixelart.at"
-		},
-		{
-			"name": "pixelart GmbH",
-			"homepage": "http://www.pixelart.at"
-		}
-	],
-	"require": {
-		"php": ">=5.4.0",
-		"bartacus/bartacus-bundle": "~0.1.0@dev",
+    "name": "bartacus/bartacus-standard",
+    "type": "project",
+    "description": "The standard edition of the Bartacus project",
+    "license": "GPL-3.0+",
+    "authors": [
+        {
+            "name": "Patrik Karisch",
+            "email": "p.karisch@pixelart.at"
+        },
+        {
+            "name": "pixelart GmbH",
+            "homepage": "http://www.pixelart.at"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "bartacus/bartacus-bundle": "~0.2.0@dev",
 
-		"incenteev/composer-parameter-handler": "~2.0",
-		"roave/security-advisories": "dev-master"
-	},
-	"scripts": {
-		"post-install-cmd": [
-			"Incenteev\\ParameterHandler\\ScriptHandler::buildParameters"
-		],
-		"post-update-cmd": [
-			"Incenteev\\ParameterHandler\\ScriptHandler::buildParameters"
-		]
-	},
-	"config": {
-		"bin-dir": "bin",
-		"vendor-dir": "Packages/Libraries"
-	},
-	"extra": {
-		"incenteev-parameters": {
-			"file": "fileadmin/app/config/parameters.yml"
-		},
-		"branch-alias": {
-			"dev-master": "0.1.x-dev"
-		}
-	}
+        "incenteev/composer-parameter-handler": "~2.0",
+        "roave/security-advisories": "dev-master"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters"
+        ],
+        "post-update-cmd": [
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters"
+        ]
+    },
+    "config": {
+        "bin-dir": "bin",
+        "vendor-dir": "Packages/Libraries"
+    },
+    "extra": {
+        "incenteev-parameters": {
+            "file": "fileadmin/app/config/parameters.yml"
+        },
+        "branch-alias": {
+            "dev-master": "0.2.x-dev"
+        }
+    }
 }

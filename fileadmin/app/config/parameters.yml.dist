@@ -1,3 +1,3 @@
-# This file is auto-generated during the composer install
 parameters:
+    # A secret key that is used to generate certain security-related tokens
     secret: ThisTokenIsNotSoSecretChangeIt
