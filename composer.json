@@ -15,7 +15,7 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "bartacus/bartacus-bundle": "~0.2.0@dev",
+        "bartacus/bartacus-bundle": "~0.2.1",
 
         "incenteev/composer-parameter-handler": "~2.0",
         "roave/security-advisories": "dev-master"
