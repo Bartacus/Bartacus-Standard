@@ -1,0 +1,7 @@
+### Composer
+composer.phar
+/vendor/
+
+### TYPO3
+/web/typo3
+/web/index.php

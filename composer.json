@@ -1,0 +1,25 @@
+{
+    "name": "bartacus/bartacus-standard",
+    "license": "GPL-3.0+",
+    "type": "project",
+    "description": "The \"Bartacus Standard Edition\" distribution",
+    "authors": [
+        {
+            "name": "Patrik Karisch",
+            "email": "patrik@karisch.guru"
+        },
+        {
+            "name": "pixelart GmbH",
+            "homepage": "https://www.pixelart.at"
+        }
+    ],
+    "require": {
+        "typo3/cms": "^8.3.0"
+    },
+    "extra": {
+        "typo3/cms": {
+            "cms-package-dir": "{$vendor-dir}/typo3/cms",
+            "web-dir": "web"
+        }
+    }
+}
