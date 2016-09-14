@@ -15,7 +15,8 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "bartacus/bartacus-bundle": "~0.2.2",
+        "bartacus/bartacus-bundle": "^0.3",
+        "cocur/slugify": "^2.0",
 
         "incenteev/composer-parameter-handler": "~2.0",
         "roave/security-advisories": "dev-master"
@@ -37,7 +38,7 @@
             "file": "fileadmin/app/config/parameters.yml"
         },
         "branch-alias": {
-            "dev-master": "0.2.x-dev"
+            "dev-master": "0.3.x-dev"
         }
     }
 }

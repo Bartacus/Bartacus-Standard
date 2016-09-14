@@ -1,21 +1,23 @@
 ### Composer
 composer.phar
-Packages/Libraries
+/bin/
+/Packages/Libraries/
 
 ### Typo3
 # Ignore serveral upload and file directories.
-fileadmin/user_upload/
-fileadmin/_processed_/
-fileadmin/_temp_/
-uploads/
+/fileadmin/user_upload/
+/fileadmin/_processed_/
+/fileadmin/_temp_/
+/uploads/
 # Ignore system folders and files, you should have them symlinked.
 /index.php
-typo3
-typo3_src
+/typo3
+/typo3_src
 # Ignore temp directory.
-typo3temp/
+/typo3temp/
 # Ignore the deprecation log
-typo3conf/deprecation_*.log
+/typo3conf/deprecation_*.log
+/typo3conf/ENABLE_INSTALL_TOOL
 
 ### Symfony
 # Parameters
