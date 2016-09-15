@@ -3,23 +3,52 @@
     "license": "GPL-3.0+",
     "type": "project",
     "description": "The \"Bartacus Standard Edition\" distribution",
-    "authors": [
-        {
-            "name": "Patrik Karisch",
-            "email": "patrik@karisch.guru"
-        },
-        {
-            "name": "pixelart GmbH",
-            "homepage": "https://www.pixelart.at"
-        }
-    ],
+    "autoload": {
+        "psr-4": { "": "src/" },
+        "classmap": [ "app/AppKernel.php" ]
+    },
+    "autoload-dev": {
+        "psr-4": { "Tests\\": "tests/" }
+    },
     "require": {
-        "typo3/cms": "^8.3.0"
+        "php": "^7.0",
+        "typo3/cms": "^8.3.0",
+        "symfony/symfony": "^3.0",
+        "sensio/distribution-bundle": "^5.0",
+        "incenteev/composer-parameter-handler": "^2.0"
+    },
+    "scripts": {
+        "symfony-scripts": [
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
+        ],
+        "post-install-cmd": [
+            "@symfony-scripts"
+        ],
+        "post-update-cmd": [
+            "@symfony-scripts"
+        ]
     },
     "extra": {
+        "symfony-app-dir": "app",
+        "symfony-bin-dir": "bin",
+        "symfony-var-dir": "var",
+        "symfony-web-dir": "web",
+        "symfony-tests-dir": "tests",
+        "symfony-assets-install": "relative",
+        "incenteev-parameters": {
+            "file": "app/config/parameters.yml"
+        },
         "typo3/cms": {
             "cms-package-dir": "{$vendor-dir}/typo3/cms",
             "web-dir": "web"
+        },
+        "branch-alias": {
+            "dev-master": "1.0-dev"
         }
     }
 }
