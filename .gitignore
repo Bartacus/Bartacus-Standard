@@ -18,3 +18,18 @@ composer.phar
 /web/typo3temp
 /web/typo3
 /web/index.php
+
+### Symfony
+/app/config/parameters.yml
+/var/*
+!/var/cache
+/var/cache/*
+!var/cache/.gitkeep
+!/var/logs
+/var/logs/*
+!var/logs/.gitkeep
+!/var/sessions
+/var/sessions/*
+!var/sessions/.gitkeep
+!var/SymfonyRequirements.php
+/web/bundles/
