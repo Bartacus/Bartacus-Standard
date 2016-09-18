@@ -17,6 +17,7 @@
  * along with the Bartacus Standard Edition.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+use Bartacus\Bundle\BartacusBundle\Http\FrontendApplication;
 use Symfony\Component\Debug\Debug;
 
 defined('SYMFONY_ENV') || define('SYMFONY_ENV', getenv('SYMFONY_ENV') ?: 'prod');
@@ -33,3 +34,5 @@ if (SYMFONY_DEBUG) {
 $kernel = new AppKernel(SYMFONY_ENV, SYMFONY_DEBUG);
 $kernel->loadClassCache();
 $kernel->boot();
+
+(new FrontendApplication($loader))->run();
