@@ -47,6 +47,7 @@
         },
         "typo3/cms": {
             "cms-package-dir": "{$vendor-dir}/typo3/cms",
+            "prepare-web-dir": false,
             "web-dir": "web"
         },
         "branch-alias": {
