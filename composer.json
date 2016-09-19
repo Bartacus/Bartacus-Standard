@@ -39,6 +39,12 @@
             "@symfony-scripts"
         ]
     },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://composer.typo3.org/"
+        }
+    ],
     "config": {
         "bin-dir": "bin"
     },
