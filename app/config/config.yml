@@ -35,3 +35,8 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+
+# Extra annotations
+jms_di_extra:
+    locations:
+        bundles: [ AppBundle ]
