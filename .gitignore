@@ -1,6 +1,9 @@
 ### Composer
 composer.phar
 /vendor/
+/bin/*
+!/bin/console
+!/bin/symfony_requirements
 
 ### TYPO3
 /web/typo3conf/*
@@ -17,7 +20,6 @@ composer.phar
 /web/uploads
 /web/typo3temp
 /web/typo3
-/web/index.php
 
 ### Symfony
 /app/config/parameters.yml

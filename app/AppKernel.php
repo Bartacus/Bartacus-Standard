@@ -10,6 +10,7 @@ class AppKernel extends Kernel
         $bundles = [
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
             new Symfony\Bundle\TwigBundle\TwigBundle(),
+            new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Bartacus\Bundle\BartacusBundle\BartacusBundle(),
             new AppBundle\AppBundle(),
         ];
