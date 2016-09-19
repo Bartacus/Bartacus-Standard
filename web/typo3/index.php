@@ -17,7 +17,7 @@
  * along with the Bartacus Standard Edition.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-use Bartacus\Bundle\BartacusBundle\Http\FrontendApplication;
+use TYPO3\CMS\Backend\Http\Application;
 
-list($loader, $kernel) = require __DIR__.'/../app/kernel.php';
-(new FrontendApplication($loader, $kernel))->run();
+list($loader, $kernel) = require __DIR__.'/../../app/kernel.php';
+(new Application($loader))->run();
