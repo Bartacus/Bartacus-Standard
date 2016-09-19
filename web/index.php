@@ -35,4 +35,4 @@ $kernel = new AppKernel(SYMFONY_ENV, SYMFONY_DEBUG);
 $kernel->loadClassCache();
 $kernel->boot();
 
-(new FrontendApplication($loader))->run();
+(new FrontendApplication($loader, $kernel))->run();
