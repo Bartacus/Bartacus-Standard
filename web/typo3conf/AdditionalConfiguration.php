@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?php declare(strict_types = 1);
 
 /*
  * This file is part of the Bartacus Standard Edition.
@@ -17,7 +17,12 @@
  * along with the Bartacus Standard Edition.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-use Bartacus\Bundle\BartacusBundle\Http\FrontendApplication;
+use Bartacus\Bundle\BartacusBundle\Config\ConfigLoader;
+use Symfony\Component\HttpKernel\Kernel;
 
-list($loader, $kernel) = require __DIR__.'/../app/kernel.php';
-(new FrontendApplication($loader, $kernel))->run();
+$kernel = $GLOBALS['kernel'];
+if ($kernel instanceof Kernel) {
+    /** @var ConfigLoader $configLoader */
+    $configLoader = $kernel->getContainer()->get('bartacus.config_loader');
+    $configLoader->loadFromAdditionalConfiguration();
+}

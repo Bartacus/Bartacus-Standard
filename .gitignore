@@ -19,7 +19,9 @@ composer.phar
 /web/fileadmin
 /web/uploads
 /web/typo3temp
-/web/typo3
+/web/typo3/*
+!/web/typo3/index.php
+!/web/typo3/cli_dispatch.phpsh
 
 ### Symfony
 /app/config/parameters.yml
