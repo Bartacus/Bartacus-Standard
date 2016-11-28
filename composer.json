@@ -12,13 +12,30 @@
     },
     "require": {
         "php": "^7.0",
-        "typo3/cms": "^8.3.0",
-        "symfony/symfony": "^3.0",
         "bartacus/bartacus-bundle": "^1.0@dev",
+        "helhum/typo3-console": "^4.0",
+        "incenteev/composer-parameter-handler": "^2.0",
+        "roave/security-advisories": "dev-master",
         "sensio/distribution-bundle": "^5.0",
         "sensio/framework-extra-bundle": "^3.0.2",
-        "incenteev/composer-parameter-handler": "^2.0",
-        "roave/security-advisories": "dev-master"
+        "symfony/symfony": "^3.0",
+        "typo3/cms": "^8.4",
+        "typo3/cms-belog": "^8.4",
+        "typo3/cms-beuser": "^8.4",
+        "typo3/cms-context-help": "^8.4",
+        "typo3/cms-filelist": "^8.4",
+        "typo3/cms-impexp": "^8.4",
+        "typo3/cms-info": "^8.4",
+        "typo3/cms-info-pagetsconfig": "^8.4",
+        "typo3/cms-lowlevel": "^8.4",
+        "typo3/cms-reports": "^8.4",
+        "typo3/cms-rsaauth": "^8.4",
+        "typo3/cms-rtehtmlarea": "^8.4",
+        "typo3/cms-setup": "^8.4",
+        "typo3/cms-sys-note": "^8.4",
+        "typo3/cms-t3editor": "^8.4",
+        "typo3/cms-tstemplate": "^8.4",
+        "typo3/cms-viewpage": "^8.4"
     },
     "require-dev": {
         "phpunit/phpunit": "^5.5"
@@ -31,7 +48,9 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget",
-            "bin/console bartacus:web-dir:prepare"
+            "bin/console bartacus:web-dir:prepare",
+            "php bin/typo3cms install:generatepackagestates",
+            "php bin/typo3cms install:fixfolderstructure"
         ],
         "post-install-cmd": [
             "@symfony-scripts"
@@ -47,7 +66,8 @@
         }
     ],
     "config": {
-        "bin-dir": "bin"
+        "bin-dir": "bin",
+        "sort-packages": true
     },
     "extra": {
         "symfony-app-dir": "app",
@@ -61,8 +81,12 @@
         },
         "typo3/cms": {
             "cms-package-dir": "{$vendor-dir}/typo3/cms",
-            "prepare-web-dir": false,
+            "prepare-web-dir": true,
             "web-dir": "web"
+        },
+        "helhum/typo3-console": {
+            "install-binary": false,
+            "install-extension-dummy": false
         },
         "branch-alias": {
             "dev-master": "1.0-dev"
