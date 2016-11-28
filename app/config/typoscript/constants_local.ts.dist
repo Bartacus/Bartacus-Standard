@@ -1,0 +1,17 @@
+############
+### PAGE ###
+############
+page {
+    livereload {
+        port = 5400
+    }
+}
+
+##############
+### CONFIG ###
+##############
+config {
+    no_cache = 1
+    admPanel = 1
+    sendCacheHeaders = 0
+}

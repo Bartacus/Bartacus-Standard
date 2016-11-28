@@ -50,8 +50,8 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget",
             "bin/console bartacus:web-dir:prepare",
-            "php bin/typo3cms install:generatepackagestates",
-            "php bin/typo3cms install:fixfolderstructure"
+            "php vendor/bin/typo3cms install:generatepackagestates",
+            "php vendor/bin/typo3cms install:fixfolderstructure"
         ],
         "post-install-cmd": [
             "@symfony-scripts"
@@ -67,7 +67,6 @@
         }
     ],
     "config": {
-        "bin-dir": "bin",
         "sort-packages": true
     },
     "extra": {
