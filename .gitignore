@@ -35,3 +35,6 @@ composer.phar
 !var/sessions/.gitkeep
 !var/SymfonyRequirements.php
 /web/bundles/
+
+### CS fixer
+/.php_cs.cache
