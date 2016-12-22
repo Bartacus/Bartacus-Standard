@@ -9,6 +9,7 @@ composer.phar
 /web/typo3conf/*
 !/web/typo3conf/LocalConfiguration.php
 !/web/typo3conf/AdditionalConfiguration.php
+!/web/typo3conf/realurl_conf.php
 !/web/typo3conf/ext
 !/web/typo3conf/l10n
 /web/typo3conf/ext/*
