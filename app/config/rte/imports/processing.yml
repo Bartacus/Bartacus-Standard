@@ -1,0 +1,44 @@
+# ****************************************************
+# Sets the proc options for all default configurations
+# ****************************************************
+
+processing:
+  # previously known as "ts_css" for transformations
+  mode: default
+  # Tags that are allowed in the content in general
+  allowTags:
+    - a
+    - br
+    - em
+    - li
+    - ol
+    - p
+    - span
+    - strong
+    - ul
+
+  ## Tags that are allowed outside of paragraphs
+  allowTagsOutside: []
+
+  ## allowed default attributes
+  allowAttributes: [class]
+
+  ## CONTENT TO DATABASE
+  HTMLparser_db:
+    ## STRIP ALL ATTRIBUTES FROM THESE TAGS
+    ## If this list of tags is not set, it will default to: b,i,u,br,center,hr,sub,sup,strong,em,li,ul,ol,blockquote,strike.
+    noAttrib: br
+    # Can be disabled if you trust ckeditor (If Automatic Content Formatting is enabled, this should be OK)
+    # allowTags: %default%
+    denyTags: img
+    tags:
+      hr:
+        allowedAttribs:
+          - class
+
+    ## REMOVE OPEN OFFICE META DATA TAGS, WORD 2003 TAGS, LINK, META, STYLE AND TITLE TAGS, AND DEPRECATED HTML TAGS
+    ## We use this rule instead of the denyTags rule so that we can protect custom tags without protecting these unwanted tags.
+    removeTags: [center, font, link, meta, o:p, sdfield, strike, style, title, u]
+
+    ## PROTECT CUSTOM TAGS
+    keepNonMatchedTags: protect

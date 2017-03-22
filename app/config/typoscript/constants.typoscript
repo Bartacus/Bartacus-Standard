@@ -6,7 +6,7 @@ page {
         description =
         author =
         keywords =
-        viewport = width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no
+        viewport = width=device-width, initial-scale=1
         robots = index,follow
         apple-mobile-web-app-capable = no
         compatible = IE=edge
@@ -30,7 +30,9 @@ page {
 ##############
 config {
     no_cache = 0
-    admPanel = 1
+    prefixLocalAnchors = all
+    removeDefaultJS = 1
+    admPanel = 0
     headerComment = Created with Bartacus - https://bartacus.readthedocs.io
     sendCacheHeaders = 1
 }

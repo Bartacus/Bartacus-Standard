@@ -1,46 +1,8 @@
 ################
 #### HELPER ####
 ################
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:app/config/typoscript/helper/ParseFunc.ts">
-
-####################
-#### PAGE CLASS ####
-####################
-lib.page.class = COA
-lib.page.class {
-    // Page alias or id as fallback
-    10 = TEXT
-    10 {
-        field = alias // uid
-        noTrimWrap = |page-||
-    }
-    // Current level of the page within the tree structure
-    20 = TEXT
-    20 {
-        data = level:1
-        noTrimWrap = | pagelevel-||
-    }
-    // Language
-    30 = TEXT
-    30 {
-        data = TSFE:sys_language_uid
-        noTrimWrap = | language-||
-    }
-    // Backend layout
-    40 = TEXT
-    40 {
-        data = levelfield:-1, backend_layout_next_level, slide
-        override.field = backend_layout
-        ifEmpty = default
-        noTrimWrap = | backendlayout-||
-    }
-    // Layout
-    50 = TEXT
-    50 {
-        field = layout
-        noTrimWrap = | layout-||
-    }
-}
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:app/config/typoscript/helper/ParseFunc.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:app/config/typoscript/helper/PageClass.typoscript">
 
 ##############
 #### PAGE ####
@@ -49,13 +11,21 @@ page = PAGE
 page {
     typeNum = 0
 
+    bodyTagCObject = COA
+    bodyTagCObject {
+        10 = TEXT
+        10.data = TSFE:id
+        10.noTrimWrap = | id="p|"|
+        20 =< lib.page.class
+        20.stdWrap.noTrimWrap = | class="|"|
+        wrap = <body|>
+    }
+
     10 = TEMPLATE
     10 {
         template = FILE
         template.file = EXT:project/Resources/Private/Templates/master.html
         marks {
-            CLASSES < lib.page.class
-
             SUBTEMPLATE = TEMPLATE
             SUBTEMPLATE {
                 template = FILE
@@ -153,8 +123,6 @@ page {
         }
     }
 
-    bodyTag = <!--[if lt IE 7]><body class="ie6"><![endif]--><!--[if IE 7]><body class="ie7"><![endif]--><!--[if IE 8]><body class="ie8"><![endif]--><!--[if IE 9]><body class="ie9"><![endif]--><!--[if (gt IE 9)|!(IE)]><!--><body><!--<![endif]-->
-
     includeCSS {
         styles = /css/main.min.css
     }
@@ -182,13 +150,11 @@ page {
             10 = TEXT
             10.value (
     <!-- Google Tag Manager -->
-    <noscript><iframe src="//www.googletagmanager.com/ns.html?id={$page.tracking.google.trackingID}"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','{$page.tracking.google.trackingID}');</script>
+    })(window,document,'script','dataLayer','{$page.tracking.google.trackingID}');
     <!-- End Google Tag Manager -->
             )
         }
@@ -210,14 +176,13 @@ page {
 config {
     absRefPrefix = auto
     no_cache = {$config.no_cache}
-    uniqueLinkVars = 1
     pageTitleFirst = 1
-    linkVars = L
+    linkVars = L(int)
+    prefixLocalAnchors = {$config.prefixLocalAnchors}
     renderCharset = utf-8
     metaCharset = utf-8
     doctype = html5
-    removeDefaultCss = 1
-    removeDefaultJS = 1
+    removeDefaultJS = {$config.removeDefaultJS}
     inlineStyle2TempFile = 1
     admPanel = {$config.admPanel}
     debug = 0
@@ -234,18 +199,13 @@ config {
     // Enable RealUrl
     tx_realurl_enable = 1
     simulateStaticDocuments = 0
-    typolinkCheckRootline = 1
-    typolinkEnableLinksAcrossDomains = 1
-
-    // Disable Image Upscaling
-    noScaleUp = 1
 
     // Language Settings
     sys_language_uid = 0
     sys_language_overlay = 1
     sys_language_mode = content_fallback
     language = en
-    locale_all = en_GB.UTF-8
+    locale_all = en_US.UTF-8
     htmlTag_setParams = lang="en" dir="ltr" class="no-js"
 
     // Compression and Concatenation of CSS and JS Files

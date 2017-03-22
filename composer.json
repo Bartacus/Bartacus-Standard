@@ -8,10 +8,10 @@
         "classmap": [ "app/AppKernel.php" ]
     },
     "autoload-dev": {
-        "psr-4": { "Tests\\": "tests/" }
+        "files": [ "vendor/symfony/symfony/src/Symfony/Component/VarDumper/Resources/functions/dump.php" ]
     },
     "require": {
-        "php": "^7.0",
+        "php": "^7.1",
         "bartacus/bartacus-bundle": "^1.0@dev",
         "helhum/realurl": "^2.1",
         "helhum/typo3-console": "^4.0",
@@ -19,28 +19,27 @@
         "roave/security-advisories": "dev-master",
         "sensio/distribution-bundle": "^5.0",
         "sensio/framework-extra-bundle": "^3.0.2",
-        "symfony/symfony": "^3.0",
-        "typo3/cms": "^8.4",
-        "typo3/cms-belog": "^8.4",
-        "typo3/cms-beuser": "^8.4",
-        "typo3/cms-context-help": "^8.4",
-        "typo3/cms-filelist": "^8.4",
-        "typo3/cms-impexp": "^8.4",
-        "typo3/cms-info": "^8.4",
-        "typo3/cms-info-pagetsconfig": "^8.4",
-        "typo3/cms-lowlevel": "^8.4",
-        "typo3/cms-reports": "^8.4",
-        "typo3/cms-rsaauth": "^8.4",
-        "typo3/cms-rtehtmlarea": "^8.4",
-        "typo3/cms-setup": "^8.4",
-        "typo3/cms-sys-note": "^8.4",
-        "typo3/cms-t3editor": "^8.4",
-        "typo3/cms-tstemplate": "^8.4",
-        "typo3/cms-viewpage": "^8.4"
+        "symfony/symfony": "^3.2",
+        "typo3/cms": "^8.6",
+        "typo3/cms-belog": "^8.6",
+        "typo3/cms-beuser": "^8.6",
+        "typo3/cms-context-help": "^8.6",
+        "typo3/cms-filelist": "^8.6",
+        "typo3/cms-impexp": "^8.6",
+        "typo3/cms-info": "^8.6",
+        "typo3/cms-info-pagetsconfig": "^8.6",
+        "typo3/cms-lowlevel": "^8.6",
+        "typo3/cms-reports": "^8.6",
+        "typo3/cms-rsaauth": "^8.6",
+        "typo3/cms-rte-ckeditor": "^8.6",
+        "typo3/cms-setup": "^8.6",
+        "typo3/cms-t3editor": "^8.6",
+        "typo3/cms-tstemplate": "^8.6",
+        "typo3/cms-viewpage": "^8.6"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^1.12",
-        "phpunit/phpunit": "^5.5"
+        "friendsofphp/php-cs-fixer": "^2.1",
+        "symfony/phpunit-bridge": "^3.0"
     },
     "scripts": {
         "symfony-scripts": [
