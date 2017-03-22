@@ -1,17 +1,14 @@
 ### Composer
 composer.phar
 /vendor/
-/bin/*
-!/bin/console
-!/bin/symfony_requirements
 
 ### TYPO3
 /web/typo3conf/*
 !/web/typo3conf/LocalConfiguration.php
 !/web/typo3conf/AdditionalConfiguration.php
 !/web/typo3conf/realurl_conf.php
-!/web/typo3conf/ext
 !/web/typo3conf/l10n
+!/web/typo3conf/ext
 /web/typo3conf/ext/*
 !/web/typo3conf/ext/project
 # !/web/typo3conf/ext/<your_site_package>

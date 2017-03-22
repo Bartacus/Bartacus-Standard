@@ -2,28 +2,33 @@
 
 declare(strict_types=1);
 
-$finder = Symfony\CS\Finder::create()
+$finder = PhpCsFixer\Finder::create()
     ->in('app')
     ->in('src')
-    ->in('tests')
+    ->in('web/typo3conf/ext/project')
 ;
 
-return Symfony\CS\Config::create()
-    ->fixers([
-        '-psr0', // only because of symfony standard lowercase tests folder
-        'combine_consecutive_unsets',
-        'no_useless_else',
-        'no_useless_return',
-        'ordered_use',
-        'php_unit_construct',
-        'php_unit_dedicate_assert',
-        'php_unit_strict',
-        'phpdoc_order',
-        'short_array_syntax',
-        'silenced_deprecation_error',
-        'strict',
-        'strict_param',
+return PhpCsFixer\Config::create()
+    ->setRules([
+        '@Symfony' => true,
+        'array_syntax' => ['syntax' => 'short'],
+        'combine_consecutive_unsets' => true,
+        'declare_strict_types' => true,
+        'dir_constant' => true,
+        'heredoc_to_nowdoc' => true,
+        'linebreak_after_opening_tag' => true,
+        'no_unreachable_default_argument_value' => true,
+        'no_useless_else' => true,
+        'no_useless_return' => true,
+        'ordered_imports' => true,
+        'php_unit_strict' => true,
+        'phpdoc_order' => true,
+        'simplified_null_return' => true,
+        'strict_comparison' => true,
+        'strict_param' => true,
+        'ternary_to_null_coalescing' => true,
     ])
-    ->finder($finder)
+    ->setRiskyAllowed(true)
+    ->setFinder($finder)
     ->setUsingCache(true)
 ;
