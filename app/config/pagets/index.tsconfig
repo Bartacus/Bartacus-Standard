@@ -1,0 +1,9 @@
+mod.SHARED {
+    defaultLanguageFlag = en
+    defaultLanguageLabel = English
+}
+
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:app/config/pagets/TCEFORM.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:app/config/pagets/TCEMAIN.tsconfig">
+
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:app/config/pagets/backend_layouts/default.tsconfig">

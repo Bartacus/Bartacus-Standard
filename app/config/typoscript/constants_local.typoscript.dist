@@ -12,6 +12,6 @@ page {
 ##############
 config {
     no_cache = 1
-    admPanel = 1
+    admPanel = 0
     sendCacheHeaders = 0
 }

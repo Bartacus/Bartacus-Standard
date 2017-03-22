@@ -20,7 +20,7 @@ composer.phar
 /web/typo3
 /web/index.php
 
-/app/config/typoscript/constants_local.ts
+/app/config/typoscript/constants_local.typoscript
 
 ### Symfony
 /app/config/parameters.yml

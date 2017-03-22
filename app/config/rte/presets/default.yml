@@ -1,0 +1,30 @@
+# Load default processing options
+imports:
+    - { resource: "EXT:app/config/rte/imports/processing.yml" }
+    - { resource: "EXT:app/config/rte/imports/base.yml" }
+    - { resource: "EXT:app/config/rte/imports/plugins.yml" }
+
+# Add configuration for the editor for any configuration
+# For complete documentation see http://docs.ckeditor.com/#!/api/CKEDITOR.config
+editor:
+    config:
+        format_tags: "p"
+
+        stylesSet: []
+
+        toolbarGroups:
+          - { name: styles, groups: [ format ] }
+          - { name: basicstyles, groups: [ basicstyles, cleanup ] }
+          - { name: links, groups: [ links ] }
+          - { name: clipboard, groups:  [ undo, clipboard ] }
+          - { name: editing, groups: [ spellchecker ] }
+          - { name: document, groups: [ mode ] }
+
+        removeButtons:
+          - Anchor
+          - Italic
+          - Underline
+          - Strike
+          - Superscript
+          - Subscript
+          - Styles
