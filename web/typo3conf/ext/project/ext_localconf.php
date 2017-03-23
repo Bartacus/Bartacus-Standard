@@ -8,4 +8,5 @@ if (!defined('TYPO3_MODE')) {
 
 // Workaround as long as https://github.com/Bartacus/BartacusBundle/issues/55 is not fixed
 $_EXTKEY = 'app';
-require dirname(dirname(dirname(dirname(__DIR__)))).'/app/ext_localconf.php';
+global $kernel;
+require $kernel->getRootDir().'/ext_localconf.php';
