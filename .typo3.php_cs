@@ -2,15 +2,18 @@
 
 declare(strict_types=1);
 
+/**
+ * This is a special fixer for fixing ext_localconf.php and ext_tables.php
+ * files which require special handling because of the cache concatenation.
+ */
+
 $finder = PhpCsFixer\Finder::create()
     ->in('app')
-    ->in('src')
     // all your local typo3 extensions you're developing
     ->in('web/typo3conf/ext/project')
-    // no declare and use statements allowed, because of cache concatenation
-    // so we have to ignore thus files and hope the have always a clean style
-    ->notName('ext_localconf.php')
-    ->notName('ext_tables.php')
+    // our special files we are fixing
+    ->name('ext_localconf.php')
+    ->name('ext_tables.php')
 ;
 
 return PhpCsFixer\Config::create()
@@ -18,18 +21,12 @@ return PhpCsFixer\Config::create()
         '@Symfony' => true,
         'array_syntax' => ['syntax' => 'short'],
         'combine_consecutive_unsets' => true,
-        'declare_strict_types' => true,
         'dir_constant' => true,
         'heredoc_to_nowdoc' => true,
         'linebreak_after_opening_tag' => true,
-        'no_unreachable_default_argument_value' => true,
         'no_useless_else' => true,
         'no_useless_return' => true,
-        'ordered_class_elements' => true,
         'ordered_imports' => true,
-        'php_unit_strict' => true,
-        'phpdoc_order' => true,
-        'simplified_null_return' => true,
         'strict_comparison' => true,
         'strict_param' => true,
         'ternary_to_null_coalescing' => true,
@@ -37,5 +34,5 @@ return PhpCsFixer\Config::create()
     ->setRiskyAllowed(true)
     ->setFinder($finder)
     ->setUsingCache(true)
+    ->setCacheFile('.typo3.php_cs.cache')
 ;
-

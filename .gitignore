@@ -38,4 +38,4 @@ composer.phar
 /web/bundles/
 
 ### CS fixer
-/.php_cs.cache
+*.php_cs.cache
