@@ -2,40 +2,44 @@
 
 declare(strict_types=1);
 
-$finder = PhpCsFixer\Finder::create()
+$commonFinder = PhpCsFixer\Finder::create()
     ->in('app')
     ->in('src')
     // all your local typo3 extensions you're developing
     ->in('web/typo3conf/ext/project')
+;
+
+$commonRules = [
+    '@Symfony' => true,
+    'array_syntax' => ['syntax' => 'short'],
+    'combine_consecutive_unsets' => true,
+    'dir_constant' => true,
+    'heredoc_to_nowdoc' => true,
+    'linebreak_after_opening_tag' => true,
+    'no_unreachable_default_argument_value' => true,
+    'no_useless_else' => true,
+    'no_useless_return' => true,
+    'ordered_class_elements' => true,
+    'ordered_imports' => true,
+    'php_unit_strict' => true,
+    'phpdoc_order' => true,
+    'simplified_null_return' => true,
+    'strict_comparison' => true,
+    'strict_param' => true,
+    'ternary_to_null_coalescing' => true,
+];
+
+$finder = clone $commonFinder;
+$finder
     // no declare and use statements allowed, because of cache concatenation
-    // so we have to ignore thus files and hope the have always a clean style
-    ->notName('ext_localconf.php')
-    ->notName('ext_tables.php')
+    // so we have to ignore thus files and check them separately.
+    ->notPath('ext_localconf.php')
+    ->notPath('ext_tables.php')
 ;
 
 return PhpCsFixer\Config::create()
-    ->setRules([
-        '@Symfony' => true,
-        'array_syntax' => ['syntax' => 'short'],
-        'combine_consecutive_unsets' => true,
-        'declare_strict_types' => true,
-        'dir_constant' => true,
-        'heredoc_to_nowdoc' => true,
-        'linebreak_after_opening_tag' => true,
-        'no_unreachable_default_argument_value' => true,
-        'no_useless_else' => true,
-        'no_useless_return' => true,
-        'ordered_class_elements' => true,
-        'ordered_imports' => true,
-        'php_unit_strict' => true,
-        'phpdoc_order' => true,
-        'simplified_null_return' => true,
-        'strict_comparison' => true,
-        'strict_param' => true,
-        'ternary_to_null_coalescing' => true,
-    ])
+    ->setRules($commonRules + ['declare_strict_types' => true])
     ->setRiskyAllowed(true)
     ->setFinder($finder)
     ->setUsingCache(true)
 ;
-

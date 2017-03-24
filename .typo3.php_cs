@@ -2,35 +2,24 @@
 
 declare(strict_types=1);
 
+use PhpCsFixer\Finder;
+
 /**
  * This is a special fixer for fixing ext_localconf.php and ext_tables.php
  * files which require special handling because of the cache concatenation.
  */
+require __DIR__.'/.php_cs';
 
-$finder = PhpCsFixer\Finder::create()
-    ->in('app')
-    // all your local typo3 extensions you're developing
-    ->in('web/typo3conf/ext/project')
+/* @var Finder $finder */
+$finder = clone $commonFinder;
+$finder
     // our special files we are fixing
-    ->name('ext_localconf.php')
-    ->name('ext_tables.php')
+    ->path('ext_localconf.php')
+    ->path('ext_tables.php')
 ;
 
 return PhpCsFixer\Config::create()
-    ->setRules([
-        '@Symfony' => true,
-        'array_syntax' => ['syntax' => 'short'],
-        'combine_consecutive_unsets' => true,
-        'dir_constant' => true,
-        'heredoc_to_nowdoc' => true,
-        'linebreak_after_opening_tag' => true,
-        'no_useless_else' => true,
-        'no_useless_return' => true,
-        'ordered_imports' => true,
-        'strict_comparison' => true,
-        'strict_param' => true,
-        'ternary_to_null_coalescing' => true,
-    ])
+    ->setRules($commonRules)
     ->setRiskyAllowed(true)
     ->setFinder($finder)
     ->setUsingCache(true)
