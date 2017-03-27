@@ -13,9 +13,6 @@ page {
 
     bodyTagCObject = COA
     bodyTagCObject {
-        10 = TEXT
-        10.data = TSFE:id
-        10.noTrimWrap = | id="p|"|
         20 =< lib.page.class
         20.stdWrap.noTrimWrap = | class="|"|
         wrap = <body|>
