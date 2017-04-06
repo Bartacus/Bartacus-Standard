@@ -13,7 +13,7 @@
     "require": {
         "php": "^7.1",
         "bartacus/bartacus-bundle": "^1.0@dev",
-        "helhum/realurl": "^2.1",
+        "dmitryd/typo3-realurl": "^2.2",
         "helhum/typo3-console": "^4.4",
         "incenteev/composer-parameter-handler": "^2.0",
         "roave/security-advisories": "dev-master",
