@@ -17,6 +17,11 @@ if (GeneralUtility::getApplicationContext()->isDevelopment()) {
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['clearCacheSystem'] = true;
 }
 
+if (\extension_loaded('zlib')) {
+    $GLOBALS['TYPO3_CONF_VARS']['BE']['compressionLevel'] = 9;
+    $GLOBALS['TYPO3_CONF_VARS']['FE']['compressionLevel'] = 9;
+}
+
 $kernel = $GLOBALS['kernel'];
 if ($kernel instanceof Kernel) {
     /** @var ConfigLoader $configLoader */
