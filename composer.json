@@ -19,7 +19,7 @@
         "roave/security-advisories": "dev-master",
         "sensio/distribution-bundle": "^5.0",
         "sensio/framework-extra-bundle": "^3.0.2",
-        "symfony/symfony": "^3.2",
+        "symfony/symfony": "3.2.*",
         "typo3/cms": "^8.7",
         "typo3/cms-belog": "^8.7",
         "typo3/cms-beuser": "^8.7",
