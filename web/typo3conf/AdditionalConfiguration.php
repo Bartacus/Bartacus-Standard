@@ -23,7 +23,6 @@ if (\extension_loaded('zlib')) {
 
 $kernel = $GLOBALS['kernel'];
 if ($kernel instanceof Kernel) {
-    /** @var ConfigLoader $configLoader */
-    $configLoader = $kernel->getContainer()->get('bartacus.config_loader');
+    $configLoader = $kernel->getContainer()->get(ConfigLoader::class);
     $configLoader->loadFromAdditionalConfiguration();
 }
