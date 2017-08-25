@@ -14,7 +14,6 @@ if (GeneralUtility::getApplicationContext()->isDevelopment()) {
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['displayErrors'] = 1;
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['systemLogLevel'] = 1;
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['enableDeprecationLog'] = 1;
-    $GLOBALS['TYPO3_CONF_VARS']['SYS']['clearCacheSystem'] = true;
 }
 
 if (\extension_loaded('zlib')) {
