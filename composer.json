@@ -70,6 +70,8 @@
         "sort-packages": true
     },
     "extra": {
+        "enable-patching": true,
+        "composer-exit-on-patch-failure": true,
         "symfony-app-dir": "app",
         "symfony-bin-dir": "bin",
         "symfony-var-dir": "var",
