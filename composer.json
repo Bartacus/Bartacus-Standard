@@ -49,7 +49,6 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget",
-            "php bin/console bartacus:web-dir:prepare",
             "php vendor/bin/typo3cms install:generatepackagestates",
             "php vendor/bin/typo3cms install:fixfolderstructure"
         ],
