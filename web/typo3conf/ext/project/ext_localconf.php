@@ -4,6 +4,6 @@ if (!\defined('TYPO3_MODE')) {
     die('Access denied.');
 }
 
-// Workaround as long as https://github.com/Bartacus/BartacusBundle/issues/55 is not fixed
+// Permanent workaround for https://github.com/Bartacus/BartacusBundle/issues/55
 $_EXTKEY = 'app';
 require \dirname(PATH_site).'/app/ext_localconf.php';
